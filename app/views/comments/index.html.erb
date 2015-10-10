@@ -1,1 +1,19 @@
-<%= link_to 'New Comment', new_comment_path, remote: true %>
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Comments</h2>
+  </div>
+
+  <div class="col-md-2 col-md-offset-4">
+    <%= link_to new_comment_path, remote: true do %>
+      <button class="btn btn-default">New</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-2" id="comment-form" style="display:none;"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-7 col-md-offset-1" id="comments"><% if @comment %><%= render @comments %><% end %></div>
+</div>
